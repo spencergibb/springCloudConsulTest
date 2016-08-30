@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    consul:
+      host: hammer.vm.sas.com
+      port: 8500

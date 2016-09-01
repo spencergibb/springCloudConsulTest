@@ -30,9 +30,10 @@ dependencies {
     runtime "com.ecwid.consul:consul-api:1.1.9"
     runtime 'joda-time:joda-time:2.8.2'
     
+    // dependencies stated in https://cloud.spring.io/spring-cloud-consul for consul retry
     runtime 'org.springframework.retry:spring-retry'
-    runtime 'org.aspectj:aspectjweaver:+'
-    
+    compile("org.springframework.boot:spring-boot-starter-aop")
+
     compile("org.springframework.boot:spring-boot-starter-web")
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")

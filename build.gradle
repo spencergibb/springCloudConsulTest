@@ -21,17 +21,24 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Brixton.SR5'
+    }
+}
+
 dependencies {
-    runtime "org.springframework.cloud:spring-cloud-consul-core:1.0.0.RELEASE"
-    runtime "org.springframework.cloud:spring-cloud-consul-config:1.0.2.RELEASE"
-    runtime "org.springframework.cloud:spring-cloud-consul-discovery:1.0.0.RELEASE"
-    runtime "org.springframework.cloud:spring-cloud-context:1.1.1.RELEASE"
-    compile "org.springframework.cloud:spring-cloud-commons:1.1.0.RELEASE"
-    runtime "com.ecwid.consul:consul-api:1.1.9"
-    runtime 'joda-time:joda-time:2.8.2'
+    compile "org.springframework.cloud:spring-cloud-starter-consul-all"
+//    runtime "org.springframework.cloud:spring-cloud-consul-core:1.0.0.RELEASE"
+//    runtime "org.springframework.cloud:spring-cloud-consul-config:1.0.2.RELEASE"
+//    runtime "org.springframework.cloud:spring-cloud-consul-discovery:1.0.0.RELEASE"
+//    runtime "org.springframework.cloud:spring-cloud-context:1.1.1.RELEASE"
+//    compile "org.springframework.cloud:spring-cloud-commons:1.1.0.RELEASE"
+//    runtime "com.ecwid.consul:consul-api:1.1.9"
+//    runtime 'joda-time:joda-time:2.8.2'
     
     // dependencies stated in https://cloud.spring.io/spring-cloud-consul for consul retry
-    runtime 'org.springframework.retry:spring-retry'
+    compile 'org.springframework.retry:spring-retry'
     compile("org.springframework.boot:spring-boot-starter-aop")
 
     compile("org.springframework.boot:spring-boot-starter-web")
